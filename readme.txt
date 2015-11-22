@@ -1,5 +1,7 @@
 Demand for product of Codeeye
 
+path ftype lines note null date size 
+
 1/统计各种类型编程语言的代码行数(cpp/c/go/php/js/html/java/shell/js)
 
 2/得到代码行数总和
