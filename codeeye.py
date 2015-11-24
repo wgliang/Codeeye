@@ -1,9 +1,10 @@
 import sys,os,time,commands  
 from optparse import OptionParser
+import sorts
 
 type_note = {'cpp':'/*//', 'c':'/*//', 'py':'#', 'php':'#/*//', 'js':'/*//', 'java':'/*//', 'sh':'#', 'go':'/*//', 'html':'<!-->'}
 
-def free_topo(path):
+def free_result(path):
 	root = os.getcwd()
 	cmd = 'rm '+ root +'/topo.txt'
 	try:
@@ -12,7 +13,7 @@ def free_topo(path):
 		print 'Init topo-file ERROR'
 		exit(1)
 
-def define_topo(path, ftype, lines, note, null, date, size):
+def define_result(path, ftype, lines, note, null, date, size):
 	root = os.getcwd()
 	try:
 		f = open(root+'/topo.txt','a+')
@@ -23,8 +24,30 @@ def define_topo(path, ftype, lines, note, null, date, size):
 		exit(0)
 	f.close()
 
+def read_result(path):
+	res = []
+	index = 0
+	for line in file(path):
+		data = {}
+		line=line.strip()
+		if not line:
+			continue
+		else:
+			line = line.split(' ')
+			data['index'] = index
+			data['path'] = line[0]
+			data['ftype'] = line[1]
+			data['lines'] = long(line[2])
+			data['note'] = long(line[3])
+			data['null'] = long(line[4])
+			data['date'] = float(line[5])
+			data['size'] = long(line[6])
+
+			res.append(data)
+		index = index + 1
+	return res
 #TODO:Identify file-type  
-def file_type(path):
+def ftype(path):
 	index = path.rfind('.')
 	return path[index+1:]
 
@@ -37,7 +60,7 @@ def identify_file(f_path):
 	lines = null = note = size =0
 	# _,file_type = f_path.split('.')
 
-	file_type = file_type(f_path)
+	file_type = ftype(f_path)
 	date = os.stat(f_path).st_mtime
 	size = os.path.getsize(f_path)
 
@@ -48,7 +71,7 @@ def identify_file(f_path):
 			null = null + 1
 		else:
 			lines = lines + 1
-	define_topo(f_path, file_type, lines, note, null, date, size)
+	define_result(f_path, file_type, lines, note, null, date, size)
 
 
 #Walk all files
@@ -78,7 +101,9 @@ if(__name__=='__main__'):
 	else:
 		rpath = os.getcwd()
 	print rpath
-	free_topo(rpath)
+	free_result(rpath)
 	walk_files(rpath)
-
+	res = read_result(rpath+'/topo.txt')
+	sorts.lines_sort(res)
+	print res
 

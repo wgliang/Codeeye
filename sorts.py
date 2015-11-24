@@ -1,4 +1,6 @@
 import sys,os,time,commands  
+from operator import itemgetter
+import operator
 #TODO:Sort the code by lines
 def sub_blank(str, target):
 	i = 1
@@ -17,20 +19,20 @@ def sub_blank(str, target):
 	else:
 		return str
 	
-def lines_sort():
-	pass
+def lines_sort(data):
+	res = sorted(data, key=operator.itemgetter('lines'))
+	print res
 
 def date_sort():
-	pass
+	res = sorted(data, key=operator.itemgetter('date'))
+	print res
 
 def size_sort():
-	pass
+	res = sorted(data, key=operator.itemgetter('size'))
+	print res
 
 def type_count_sort():
 	pass
 
 def type_indiv_sort():
 	pass
-
-if(__name__=='__main__'):  
-	print sub_blank('grhg', 2)
