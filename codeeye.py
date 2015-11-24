@@ -1,91 +1,11 @@
 import sys,os,time,commands  
-from optparse import OptionParser
 import sorts
+import oper
+import features
+from optparse import OptionParser
 
 type_note = {'cpp':'/*//', 'c':'/*//', 'py':'#', 'php':'#/*//', 'js':'/*//', 'java':'/*//', 'sh':'#', 'go':'/*//', 'html':'<!-->'}
 
-def free_result(path):
-	root = os.getcwd()
-	cmd = 'rm '+ root +'/topo.txt'
-	try:
-		output = commands.getoutput(cmd)
-	except:
-		print 'Init topo-file ERROR'
-		exit(1)
-
-def define_result(path, ftype, lines, note, null, date, size):
-	root = os.getcwd()
-	try:
-		f = open(root+'/topo.txt','a+')
-		data = path+' '+ftype+' '+str(lines)+' '+str(note)+' '+str(null)+' '+str(date)+' '+str(size)+'\n'
-		f.write(data)
-	except:
-		print "Write Topo ERROR"
-		exit(0)
-	f.close()
-
-def read_result(path):
-	res = []
-	index = 0
-	for line in file(path):
-		data = {}
-		line=line.strip()
-		if not line:
-			continue
-		else:
-			line = line.split(' ')
-			data['index'] = index
-			data['path'] = line[0]
-			data['ftype'] = line[1]
-			data['lines'] = long(line[2])
-			data['note'] = long(line[3])
-			data['null'] = long(line[4])
-			data['date'] = float(line[5])
-			data['size'] = long(line[6])
-
-			res.append(data)
-		index = index + 1
-	return res
-#TODO:Identify file-type  
-def ftype(path):
-	index = path.rfind('.')
-	return path[index+1:]
-
-#TODO:Count the lines
-def line_count():
-	pass
-
-#TODO:Identify file
-def identify_file(f_path):  
-	lines = null = note = size =0
-	# _,file_type = f_path.split('.')
-
-	file_type = ftype(f_path)
-	date = os.stat(f_path).st_mtime
-	size = os.path.getsize(f_path)
-
-	#sort file by type
-	for line in file(f_path):
-		line = line.split()
-		if not line:
-			null = null + 1
-		else:
-			lines = lines + 1
-	define_result(f_path, file_type, lines, note, null, date, size)
-
-
-#Walk all files
-def walk_files(path):
-	for root, dirs, files in os.walk(path):
-		#files
-		print root
-		if root.find('.git') >= 0:
-			print 'Hide or invalid file'
-			continue
-		for c_file in files:
-			f_path =  root + '/' + c_file;
-			identify_file(f_path)
-		
 if(__name__=='__main__'):  
 	usage = "%prog [options] [netcard name]"
 	desc ="Manage Network"
@@ -100,10 +20,9 @@ if(__name__=='__main__'):
 		rpath = options.path
 	else:
 		rpath = os.getcwd()
-	print rpath
-	free_result(rpath)
-	walk_files(rpath)
-	res = read_result(rpath+'/topo.txt')
+	oper.free_result(rpath)
+	features.walk_files(rpath)
+	res = oper.read_result(rpath+'/topo.txt')
 	sorts.lines_sort(res)
 	print res
 
