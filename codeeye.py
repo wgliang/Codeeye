@@ -2,9 +2,8 @@ import sys,os,time,commands
 import sorts
 import oper
 import features
+import jsonconf
 from optparse import OptionParser
-
-type_note = {'cpp':'/*//', 'c':'/*//', 'py':'#', 'php':'#/*//', 'js':'/*//', 'java':'/*//', 'sh':'#', 'go':'/*//', 'html':'<!-->'}
 
 if(__name__=='__main__'):  
 	usage = "%prog [options] [netcard name]"
@@ -20,9 +19,11 @@ if(__name__=='__main__'):
 		rpath = options.path
 	else:
 		rpath = os.getcwd()
-	oper.free_result(rpath)
-	features.walk_files(rpath)
-	res = oper.read_result(rpath+'/topo.txt')
-	sorts.lines_sort(res)
-	print res
+	# oper.free_result(rpath)
+	# features.walk_files(rpath)
+	# res = oper.read_result(rpath+'/topo.txt')
+	# sorts.lines_sort(res)
+	# sorts.date_sort(res)
+	# sorts.size_sort(res)
+	# print jsonconf.read_json('Codeeye.json')
 

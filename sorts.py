@@ -23,11 +23,11 @@ def lines_sort(data):
 	res = sorted(data, key=operator.itemgetter('lines'))
 	print res
 
-def date_sort():
+def date_sort(data):
 	res = sorted(data, key=operator.itemgetter('date'))
 	print res
 
-def size_sort():
+def size_sort(data):
 	res = sorted(data, key=operator.itemgetter('size'))
 	print res
 
