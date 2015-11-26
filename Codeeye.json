@@ -72,12 +72,20 @@
                     "note": 0,
                     "null": 0
                 }
+            ],
+            "others": [
+                {
+                    "file": 0,
+                    "lines": 0,
+                    "note": 0,
+                    "null": 0
+                }
             ]
         }
     ],
-    "data": [
+    "date": [
         {
-            "data-y": [
+            "date-y": [
                 {
                     "file": 0,
                     "type": "cpp",
@@ -95,22 +103,7 @@
                 },
                 {
                     "file": 0,
-                    "type": "js",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
                     "type": "py",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "sh",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "html",
                     "lines": 0
                 },
                 {
@@ -120,11 +113,31 @@
                 },
                 {
                     "file": 0,
+                    "type": "js",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "sh",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
                     "type": "java",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "html",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "others",
                     "lines": 0
                 }
             ],
-            "data-m": [
+            "date-m": [
                 {
                     "file": 0,
                     "type": "cpp",
@@ -142,22 +155,7 @@
                 },
                 {
                     "file": 0,
-                    "type": "js",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
                     "type": "py",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "sh",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "html",
                     "lines": 0
                 },
                 {
@@ -167,11 +165,31 @@
                 },
                 {
                     "file": 0,
+                    "type": "js",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "sh",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
                     "type": "java",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "html",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "others",
                     "lines": 0
                 }
             ],
-            "data-w": [
+            "date-w": [
                 {
                     "file": 0,
                     "type": "cpp",
@@ -189,22 +207,7 @@
                 },
                 {
                     "file": 0,
-                    "type": "js",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
                     "type": "py",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "sh",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "html",
                     "lines": 0
                 },
                 {
@@ -214,11 +217,31 @@
                 },
                 {
                     "file": 0,
+                    "type": "js",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "sh",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
                     "type": "java",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "html",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "others",
                     "lines": 0
                 }
             ],
-            "data-d": [
+            "date-d": [
                 {
                     "file": 0,
                     "type": "cpp",
@@ -236,22 +259,7 @@
                 },
                 {
                     "file": 0,
-                    "type": "js",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
                     "type": "py",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "sh",
-                    "lines": 0
-                },
-                {
-                    "file": 0,
-                    "type": "html",
                     "lines": 0
                 },
                 {
@@ -261,7 +269,27 @@
                 },
                 {
                     "file": 0,
+                    "type": "js",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "sh",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
                     "type": "java",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "html",
+                    "lines": 0
+                },
+                {
+                    "file": 0,
+                    "type": "others",
                     "lines": 0
                 }
             ]

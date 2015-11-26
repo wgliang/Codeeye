@@ -2,7 +2,6 @@ import sys,os,time,commands
 import sorts
 import oper
 import features
-import jsonconf
 from optparse import OptionParser
 
 if(__name__=='__main__'):  
@@ -19,9 +18,9 @@ if(__name__=='__main__'):
 		rpath = options.path
 	else:
 		rpath = os.getcwd()
-	# oper.free_result(rpath)
-	# features.walk_files(rpath)
-	# res = oper.read_result(rpath+'/topo.txt')
+	oper.free_result(rpath)
+	features.walk_files(rpath)
+	res = oper.read_result(rpath+'/topo.txt')
 	# sorts.lines_sort(res)
 	# sorts.date_sort(res)
 	# sorts.size_sort(res)

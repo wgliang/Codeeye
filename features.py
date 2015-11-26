@@ -3,11 +3,16 @@ import oper,os
 #TODO:Identify file
 def identify_file(f_path):  
 	lines = null = note = size =0
-	# _,file_type = f_path.split('.')
 
 	file_type = oper.ftype(f_path)
+
 	date = os.stat(f_path).st_mtime
+
 	size = os.path.getsize(f_path)
+
+	root = os.getcwd()
+	temp = root.rfind('/')
+	fpath = root + '/' + root[temp+1:].lower() + '.json'
 
 	#sort file by type
 	for line in file(f_path):
@@ -16,6 +21,9 @@ def identify_file(f_path):
 			null = null + 1
 		else:
 			lines = lines + 1
+
+	oper.json_rewrite(fpath, file_type, lines, note, null, date)
+
 	oper.define_result(f_path, file_type, lines, note, null, date, size)
 
 
