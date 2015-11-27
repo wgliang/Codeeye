@@ -1,5 +1,6 @@
 import oper,os
 
+
 #TODO:Identify file
 def identify_file(f_path):  
 	lines = null = note = size =0
@@ -11,8 +12,9 @@ def identify_file(f_path):
 	size = os.path.getsize(f_path)
 
 	root = os.getcwd()
-	temp = root.rfind('/')
-	fpath = root + '/' + root[temp+1:].lower() + '.json'
+	rtemp = root.rfind('/src')
+	temp = root[:rtemp].rfind('/')
+	fpath = root[:rtemp] + '/' + 'conf/' +root[temp+1:rtemp].lower() + '.json'
 
 	#sort file by type
 	for line in file(f_path):

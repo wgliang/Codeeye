@@ -12,10 +12,15 @@ OTHERSLANGUAGETYPE = 'others'
 def ftype(path):
 	index = path.rfind('.')
 	return path[index+1:]
+def root_dir():
+	root = os.getcwd()
+	rtemp = root.rfind('/src')
+	return root[:rtemp]
 
 def free_result(path):
 	root = os.getcwd()
-	cmd = 'rm '+ root +'/topo.txt'
+	root = root_dir()
+	cmd = 'rm '+ root +'/conf/topo.txt'
 	try:
 		output = commands.getoutput(cmd)
 	except:
@@ -23,9 +28,9 @@ def free_result(path):
 		exit(1)
 
 def define_result(path, ftype, lines, note, null, date, size):
-	root = os.getcwd()
+	root = root_dir()
 	try:
-		f = open(root+'/topo.txt','a+')
+		f = open(root+'/conf/topo.txt','a+')
 		data = path+' '+ftype+' '+str(lines)+' '+str(note)+' '+str(null)+' '+str(date)+' '+str(size)+'\n'
 		f.write(data)
 	except:

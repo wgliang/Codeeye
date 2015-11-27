@@ -17,12 +17,11 @@ if(__name__=='__main__'):
 	if not options.path is None:
 		rpath = options.path
 	else:
-		rpath = os.getcwd()
+		# rpath = os.getcwd()
+		print 'Not take dirs'
+		exit(0)
 	oper.free_result(rpath)
 	features.walk_files(rpath)
-	res = oper.read_result(rpath+'/topo.txt')
-	# sorts.lines_sort(res)
-	# sorts.date_sort(res)
-	# sorts.size_sort(res)
-	# print jsonconf.read_json('Codeeye.json')
+	res = oper.read_result(rpath+'/conf/topo.txt')
+	
 
