@@ -3,20 +3,23 @@ from operator import itemgetter
 import operator
 import jsonconf
 
-#define
+#Global define
 FILENUM = 1
 OTHERSLANGUAGEINDEX = 9
 OTHERSLANGUAGETYPE = 'others'
 
-#TODO:Identify file-type  
+#Get file type
 def ftype(path):
 	index = path.rfind('.')
 	return path[index+1:]
+
+#Get dir of root
 def root_dir():
 	root = os.getcwd()
 	rtemp = root.rfind('/src')
 	return root[:rtemp]
 
+#Free result in topo
 def free_result(path):
 	root = os.getcwd()
 	root = root_dir()
@@ -27,6 +30,7 @@ def free_result(path):
 		print 'Init topo-file ERROR'
 		exit(1)
 
+#Define result in topo
 def define_result(path, ftype, lines, note, null, date, size):
 	root = root_dir()
 	try:
@@ -38,6 +42,7 @@ def define_result(path, ftype, lines, note, null, date, size):
 		exit(0)
 	f.close()
 
+#Read result in topo
 def read_result(path):
 	res = []
 	index = 0
@@ -61,12 +66,15 @@ def read_result(path):
 		index = index + 1
 	return res
 
-def ftype_map(ftype):
+#Type map index
+def ftype_mapindex(ftype):
 	types = {'cpp':0, 'c':1, 'php':2, 'py':3, 'go':4, 'js':5, 'sh':6, 'java':7, 'html':8}
 	if types.has_key(ftype):
 		return types[ftype]
 	else:
 		return OTHERSLANGUAGEINDEX
+
+#Type map type
 def ftype_maptype(ftype):
 	types = {'cpp':'cpp', 'c':'c', 'php':'php', 'py':'py', 'go':'go', 'js':'js', 'sh':'sh', 'java':'java', 'html':'html'}
 	if types.has_key(ftype):
@@ -74,19 +82,22 @@ def ftype_maptype(ftype):
 	else:
 		return OTHERSLANGUAGETYPE
 
+#Rewrite code
 def code_rewrite(attribute, data_add):
 	return attribute + data_add
 
+#Rewrite date
 def date_rewrite(attribute, attr_date, date, data_add):
 	date_map = {'date-y':31536000, 'date-m':2592000, 'date-w':604800, 'date-d':86400}
 	if time.time() - date >= date_map[attr_date]:
 		attribute = attribute + data_add
 	return attribute
 
+#Rewrite json
 def json_rewrite(path, ftype, lines, note, null, date):
 	data = jsonconf.read_json(path)
 	#TODO:rewrite data
-	index = ftype_map(ftype)
+	index = ftype_mapindex(ftype)
 
 	data['code'][0][ftype_maptype(ftype)][0]['lines'] = code_rewrite(data['code'][0][ftype_maptype(ftype)][0]['lines'], lines)
 

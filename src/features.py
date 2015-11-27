@@ -1,7 +1,6 @@
 import oper,os
 
-
-#TODO:Identify file
+#Identify file
 def identify_file(f_path):  
 	lines = null = note = size =0
 
@@ -27,7 +26,6 @@ def identify_file(f_path):
 	oper.json_rewrite(fpath, file_type, lines, note, null, date)
 
 	oper.define_result(f_path, file_type, lines, note, null, date, size)
-
 
 #Walk all files
 def walk_files(path):

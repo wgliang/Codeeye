@@ -1,7 +1,8 @@
 import sys,os,time,commands  
 from operator import itemgetter
 import operator
-#TODO:Sort the code by lines
+
+#Get val separated by blank
 def sub_blank(str, target):
 	i = 1
 	while(i < target):
@@ -18,21 +19,26 @@ def sub_blank(str, target):
 		return str[:index]
 	else:
 		return str
-	
+
+#Sort file by lines
 def lines_sort(data):
 	res = sorted(data, key=operator.itemgetter('lines'))
 	print res
 
+#Sort file by date
 def date_sort(data):
 	res = sorted(data, key=operator.itemgetter('date'))
 	print res
 
+#Sort file by size
 def size_sort(data):
 	res = sorted(data, key=operator.itemgetter('size'))
 	print res
 
+#Sort file by type-count
 def type_count_sort():
 	pass
 
+#Sort file by type-indiv
 def type_indiv_sort():
 	pass
