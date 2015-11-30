@@ -24,6 +24,7 @@ if(__name__=='__main__'):
 	oper.free_result(rpath)
 	oper.json_init(rpath+'/conf/codeeye.json')
 	features.walk_files(rpath)
-	res = oper.read_result(rpath+'/conf/topo.txt')
+	# res = oper.read_result(rpath+'/conf/topo.txt')
+	print oper.date_day_identify(rpath+'/conf/topo.txt')
 	producer.producer(rpath)
 

@@ -9,12 +9,10 @@ def build_data_model_lines(temp):
 
 	return data
 
-def build_data_model_date_day(temp):
-	data = []
-	for index,ftype in labels:
-		data.append(temp['date'][0]['date-d'][index]['lines'])
-
-	return data
+def build_data_model_date_day(path):
+	data = oper.date_day_identify(path)
+	date = [index for index in range(0,24)]
+	templates.broken(date,data,'zhexiantu')
 
 def build_data_model_date_week(temp):
 	data = []
@@ -45,9 +43,11 @@ def build_data_model_file_count(temp):
 	return data
 
 def producer(path):
-	temp  = jsonconf.read_json(path+'/conf/codeeye.json')
+	# temp  = jsonconf.read_json(path+'/conf/codeeye.json')
 
-	data = build_data_model_lines(temp)
-	print data
-	data = data[:-1]
-	templates.sector(data)
+	# data = build_data_model_lines(temp)
+	# print data
+	# data = data[:-1]
+	# templates.sector(data)
+
+	build_data_model_date_day(path+'/conf/topo.txt')

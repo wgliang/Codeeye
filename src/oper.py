@@ -4,6 +4,7 @@ import operator
 import jsonconf
 
 labels = ['C++', 'C', 'PHP', 'Python', 'Go', 'JavaScript', 'Shell', 'Java', 'HTML']
+date_map = {'date-y':31536000, 'date-m':2592000, 'date-w':604800, 'date-d':86400, 'date-h':3600}
 #Global define
 FILENUM = 1
 OTHERSLANGUAGEINDEX = 9
@@ -91,10 +92,20 @@ def code_rewrite(attribute, data_add):
 
 #Rewrite date
 def date_rewrite(attribute, attr_date, date, data_add):
-	date_map = {'date-y':31536000, 'date-m':2592000, 'date-w':604800, 'date-d':86400, 'date-h':3600}
 	if time.time() - date >= date_map[attr_date]:
 		attribute = attribute + data_add
 	return attribute
+
+def date_day_identify(path):
+	data = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	res = read_result(path)
+	for temp in res:
+		duration = time.time() - temp['date']
+		if duration >= 0 and duration <  date_map['date-d']:
+			index = int(duration/date_map['date-h'])
+			data[index] = data[index] + temp['lines']
+	return data
+
 
 #Init json
 def json_init(path):

@@ -6,7 +6,7 @@ def identify_file(f_path):
 
 	file_type = oper.ftype(f_path)
 
-	date = os.stat(f_path).st_mtime
+	date = os.stat(f_path).st_ctime
 
 	size = os.path.getsize(f_path)
 

@@ -2,6 +2,7 @@ import matplotlib
 matplotlib.use('Agg') 
 import numpy as np
 import matplotlib.pyplot as plt
+import oper
 
 labels = ['C++', 'C', 'PHP', 'Python', 'Go', 'JavaScript', 'Shell', 'Java', 'HTML']
 
@@ -16,10 +17,13 @@ def sector(data):
 
 #zhexian
 def broken(date, data, name):
-	plt.figure(num=1, figsize=(8,6))
-	plt.axes(aspect=1)
-	plt.title('lines-zhexiantu', size=14)
-	plt.plot(date, datd)
+	# plt.figure(num=1, figsize=(8,6))
+	# plt.axes(aspect=1)
+	# plt.title('lines-zhexiantu', size=14)
+	print date
+	print 
+	print data
+	plt.plot(date, data)
 	plt.savefig(name + '.pdf', format='pdf')
 
 
