@@ -1,4 +1,5 @@
 import json
+
 #Read json
 def read_json(path):
 	f = file(path)
@@ -9,5 +10,9 @@ def read_json(path):
 def write_json(path, python_object):
 	with open(path,'w') as f:
 		json_object = json.dump(python_object, f)
+
+def init_json(path):
+	data = read_json(path)
+	
 
 

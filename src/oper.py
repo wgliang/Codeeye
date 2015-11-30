@@ -3,10 +3,11 @@ from operator import itemgetter
 import operator
 import jsonconf
 
+labels = ['C++', 'C', 'PHP', 'Python', 'Go', 'JavaScript', 'Shell', 'Java', 'HTML']
 #Global define
 FILENUM = 1
 OTHERSLANGUAGEINDEX = 9
-OTHERSLANGUAGETYPE = 'others'
+OTHERSLANGUAGETYPE = 'Others'
 
 #Get file type
 def ftype(path):
@@ -29,6 +30,8 @@ def free_result(path):
 	except:
 		print 'Init topo-file ERROR'
 		exit(1)
+	cmd = 'rm '+ root +'/conf/codeeye.json'
+
 
 #Define result in topo
 def define_result(path, ftype, lines, note, null, date, size):
@@ -76,7 +79,7 @@ def ftype_mapindex(ftype):
 
 #Type map type
 def ftype_maptype(ftype):
-	types = {'cpp':'cpp', 'c':'c', 'php':'php', 'py':'py', 'go':'go', 'js':'js', 'sh':'sh', 'java':'java', 'html':'html'}
+	types = {'cpp':'C++', 'c':'C', 'php':'PHP', 'py':'Python', 'go':'Go', 'js':'JavaScrit', 'sh':'Shell', 'java':'Java', 'html':'HTML'}
 	if types.has_key(ftype):
 		return types[ftype]
 	else:
@@ -93,6 +96,33 @@ def date_rewrite(attribute, attr_date, date, data_add):
 		attribute = attribute + data_add
 	return attribute
 
+#Init json
+def json_init(path):
+	data = jsonconf.read_json(path)
+	#TODO:rewrite data
+	for ftype in labels:
+		data['code'][0][ftype][0]['lines'] = code_rewrite(0,0)
+
+		data['code'][0][ftype][0]['note'] = code_rewrite(0,0)
+
+		data['code'][0][ftype][0]['null'] = code_rewrite(0,0)
+
+		data['code'][0][ftype][0]['file'] = code_rewrite(0,0)
+
+	for index in range(0,len(labels)):
+		data['date'][0]['date-y'][index]['file'] = 0
+		data['date'][0]['date-y'][index]['lines'] = 0
+
+		data['date'][0]['date-m'][index]['file'] = 0
+		data['date'][0]['date-m'][index]['lines'] = 0
+
+		data['date'][0]['date-w'][index]['file'] = 0
+		data['date'][0]['date-w'][index]['lines'] = 0
+
+		data['date'][0]['date-d'][index]['file'] = 0
+		data['date'][0]['date-d'][index]['lines'] = 0
+
+	jsonconf.write_json(path, data)
 #Rewrite json
 def json_rewrite(path, ftype, lines, note, null, date):
 	data = jsonconf.read_json(path)

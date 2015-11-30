@@ -1,7 +1,7 @@
 {
     "code": [
         {
-            "cpp": [
+            "C++": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -9,7 +9,7 @@
                     "null": 0
                 }
             ],
-            "c": [
+            "C": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -17,7 +17,7 @@
                     "null": 0
                 }
             ],
-            "php": [
+            "PHP": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -25,7 +25,7 @@
                     "null": 0
                 }
             ],
-            "py": [
+            "Python": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -33,7 +33,7 @@
                     "null": 0
                 }
             ],
-            "go": [
+            "Go": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -41,7 +41,7 @@
                     "null": 0
                 }
             ],
-            "js": [
+            "JavaScript": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -49,7 +49,7 @@
                     "null": 0
                 }
             ],
-            "sh": [
+            "Shell": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -57,7 +57,7 @@
                     "null": 0
                 }
             ],
-            "java": [
+            "Java": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -65,7 +65,7 @@
                     "null": 0
                 }
             ],
-            "html": [
+            "HTML": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -73,7 +73,7 @@
                     "null": 0
                 }
             ],
-            "others": [
+            "Others": [
                 {
                     "file": 0,
                     "lines": 0,
@@ -88,208 +88,208 @@
             "date-y": [
                 {
                     "file": 0,
-                    "type": "cpp",
+                    "type": "C++",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "c",
+                    "type": "C",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "php",
+                    "type": "PHP",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "py",
+                    "type": "Python",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "go",
+                    "type": "Go",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "js",
+                    "type": "JavaScript",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "sh",
+                    "type": "Shell",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "java",
+                    "type": "Java",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "html",
+                    "type": "HTML",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "others",
+                    "type": "Others",
                     "lines": 0
                 }
             ],
             "date-m": [
                 {
                     "file": 0,
-                    "type": "cpp",
+                    "type": "C++",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "c",
+                    "type": "C",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "php",
+                    "type": "PHP",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "py",
+                    "type": "Python",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "go",
+                    "type": "Go",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "js",
+                    "type": "JavaScript",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "sh",
+                    "type": "Shell",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "java",
+                    "type": "Java",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "html",
+                    "type": "HTML",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "others",
+                    "type": "Others",
                     "lines": 0
                 }
             ],
             "date-w": [
                 {
                     "file": 0,
-                    "type": "cpp",
+                    "type": "C++",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "c",
+                    "type": "C",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "php",
+                    "type": "PHP",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "py",
+                    "type": "Python",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "go",
+                    "type": "Go",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "js",
+                    "type": "JavaScript",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "sh",
+                    "type": "Shell",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "java",
+                    "type": "Java",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "html",
+                    "type": "HTML",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "others",
+                    "type": "Others",
                     "lines": 0
                 }
             ],
             "date-d": [
                 {
                     "file": 0,
-                    "type": "cpp",
+                    "type": "C++",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "c",
+                    "type": "C",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "php",
+                    "type": "PHP",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "py",
+                    "type": "Python",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "go",
+                    "type": "Go",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "js",
+                    "type": "JavaScript",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "sh",
+                    "type": "Shell",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "java",
+                    "type": "Java",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "html",
+                    "type": "HTML",
                     "lines": 0
                 },
                 {
                     "file": 0,
-                    "type": "others",
+                    "type": "Others",
                     "lines": 0
                 }
             ]

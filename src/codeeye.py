@@ -2,6 +2,7 @@ import sys,os,time,commands
 import sorts
 import oper
 import features
+import producer
 from optparse import OptionParser
 
 if(__name__=='__main__'):  
@@ -21,7 +22,8 @@ if(__name__=='__main__'):
 		print 'Not take dirs'
 		exit(0)
 	oper.free_result(rpath)
+	oper.json_init(rpath+'/conf/codeeye.json')
 	features.walk_files(rpath)
 	res = oper.read_result(rpath+'/conf/topo.txt')
-	
+	producer.producer(rpath)
 
