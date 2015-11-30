@@ -91,7 +91,7 @@ def code_rewrite(attribute, data_add):
 
 #Rewrite date
 def date_rewrite(attribute, attr_date, date, data_add):
-	date_map = {'date-y':31536000, 'date-m':2592000, 'date-w':604800, 'date-d':86400}
+	date_map = {'date-y':31536000, 'date-m':2592000, 'date-w':604800, 'date-d':86400, 'date-h':3600}
 	if time.time() - date >= date_map[attr_date]:
 		attribute = attribute + data_add
 	return attribute
@@ -122,6 +122,9 @@ def json_init(path):
 		data['date'][0]['date-d'][index]['file'] = 0
 		data['date'][0]['date-d'][index]['lines'] = 0
 
+		data['date'][0]['date-h'][index]['file'] = 0
+		data['date'][0]['date-h'][index]['lines'] = 0
+
 	jsonconf.write_json(path, data)
 #Rewrite json
 def json_rewrite(path, ftype, lines, note, null, date):
@@ -149,5 +152,8 @@ def json_rewrite(path, ftype, lines, note, null, date):
 
 	data['date'][0]['date-d'][index]['file'] = date_rewrite(data['date'][0]['date-d'][index]['file'], 'date-d', date, FILENUM)
 	data['date'][0]['date-d'][index]['lines'] = date_rewrite(data['date'][0]['date-d'][index]['lines'], 'date-d', date, lines)
+
+	data['date'][0]['date-h'][index]['file'] = date_rewrite(data['date'][0]['date-h'][index]['file'], 'date-h', date, FILENUM)
+	data['date'][0]['date-h'][index]['lines'] = date_rewrite(data['date'][0]['date-h'][index]['lines'], 'date-h', date, lines)
 
 	jsonconf.write_json(path, data)

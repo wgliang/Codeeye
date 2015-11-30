@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 labels = ['C++', 'C', 'PHP', 'Python', 'Go', 'JavaScript', 'Shell', 'Java', 'HTML']
+
 #shanxing
 def sector(data):
 	print data
@@ -14,6 +15,12 @@ def sector(data):
 	plt.savefig('sector_lines.pdf', format='pdf')
 
 #zhexian
-def broken():
-	pass
+def broken(date, data, name):
+	plt.figure(num=1, figsize=(8,6))
+	plt.axes(aspect=1)
+	plt.title('lines-zhexiantu', size=14)
+	plt.plot(date, datd)
+	plt.savefig(name + '.pdf', format='pdf')
+
+
 
