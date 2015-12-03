@@ -97,12 +97,37 @@ def date_rewrite(attribute, attr_date, date, data_add):
 	return attribute
 
 def date_day_identify(path):
-	data = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	num = 0
+	data = [num for i in range(0,24)]
 	res = read_result(path)
 	for temp in res:
 		duration = time.time() - temp['date']
 		if duration >= 0 and duration <  date_map['date-d']:
 			index = int(duration/date_map['date-h'])
+			data[index] = data[index] + temp['lines']
+	return data
+
+def date_week_identify(path):
+	num = 0
+	data = [num for i in range(0,7)]
+	res = read_result(path)
+	cur_time = time.time()
+	for temp in res:
+		duration = cur_time - temp['date']
+		if duration >= 0 and duration <  date_map['date-w']:
+			index = int(duration/date_map['date-d'])
+			data[index] = data[index] + temp['lines']
+	return data
+
+def date_month_identify(path):
+	num = 0
+	data = [num for i in range(0,30)]
+	res = read_result(path)
+	cur_time = time.time()
+	for temp in res:
+		duration = cur_time - temp['date']
+		if duration >= 0 and duration <  date_map['date-m']:
+			index = int(duration/date_map['date-d'])
 			data[index] = data[index] + temp['lines']
 	return data
 
